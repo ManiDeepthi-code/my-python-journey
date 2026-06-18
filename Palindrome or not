@@ -1,0 +1,21 @@
+bool isPalindrome(int x) {
+    // STEP 1: Handle obvious edge cases (Negative numbers cannot be palindromes)
+    if (x < 0) return false;
+    
+    int original = x;   // Save a copy of the original number to compare at the end
+    long reversed = 0;  // Use 'long' to prevent integer overflow if the number is huge
+    
+    // STEP 2: Reverse the number using your loop logic
+    while (x > 0) {
+        int lastDigit = x % 10;          // Grab the last digit
+        reversed = (reversed * 10) + lastDigit; // Shift left and drop the digit in
+        x = x / 10;                      // Chop off the last digit
+    }
+    
+    // STEP 3: The ultimate condition check
+    if (original == reversed) {
+        return true;  // It is a palindrome!
+    } else {
+        return false; // It is not a palindrome.
+    }
+}
