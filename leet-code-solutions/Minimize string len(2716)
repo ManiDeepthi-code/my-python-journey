@@ -1,0 +1,7 @@
+class Solution(object):
+    def minimizedStringLength(self, s):
+        
+        return len(set(s)) """retrun the length and we use set to remove the duplicate here"""
+        
+
+        
